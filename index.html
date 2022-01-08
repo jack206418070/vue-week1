@@ -65,10 +65,10 @@
                         <h3 class="">產品名稱</h3>
                         <div class="info__group w-90">
                             <ul class="d-flex fw-bold">
-                                <li>原價</li>
-                                <li>售價</li>
-                                <li>是否啟用</li>
-                                <li>查看細節</li>
+                                <li class="w-15">原價</li>
+                                <li class="w-15">售價</li>
+                                <li class="w-30">是否啟用</li>
+                                <li class="w-40">查看/刪除</li>
                             </ul>
                         </div>
                     </li>
@@ -76,17 +76,18 @@
                         <h3>{{ item.title }}</h3>
                         <div class="info__group w-90">
                             <ul class="d-flex fw-bold align-items-center">
-                                <li>${{ item.origin_price }}</li>
-                                <li>${{ item.price }}</li>
-                                <li class="d-flex jy-content-between">
+                                <li class="w-15">${{ item.origin_price }}</li>
+                                <li class="w-15">${{ item.price }}</li>
+                                <li class="d-flex jy-content-between w-30 px-4">
                                     <div @click="changeStatus(item)" class="toggle" :class="{ 'active': item.is_enabled }">
                                         <div class="toggle__item" :class="{ 'active': item.is_enabled }">
                                         </div>
                                     </div>
                                     <p :class="{ 'active': item.is_enabled }">{{ item.is_enabled ? '啟用' : '未啟用' }}</p>
                                 </li>
-                                <li>
-                                    <a @click.prevent="viewProduct(item)" href="#" class="btn btn--danger w-80 ml-auto">查看</a>
+                                <li class="w-40 d-flex jy-content-around">
+                                    <a @click.prevent="viewProduct(item)" href="#" class="btn btn--success w-40">查看</a>
+                                    <a @click.prevent="deleteProduct(item.id)" class="btn btn--danger w-40" href="#">刪除</a>
                                 </li>
                             </ul>
                         </div>

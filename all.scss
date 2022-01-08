@@ -22,8 +22,21 @@ img{
 .align-self-end{
     align-self:flex-end;
 }
+.px-4{
+    padding-right: 16px;
+    padding-left: 16px;
+}
 .w-10{
-    width: 10%;
+    width: 10% !important;
+}
+.w-15{
+    width: 15% !important;
+}
+.w-35{
+    width: 30% !important;
+}
+.w-40{
+    width: 40% !important;
 }
 .pl-5{
     padding-left: 20px;
@@ -135,12 +148,15 @@ img{
 .jy-content-between{
     justify-content: space-between;
 }
+.jy-content-around{
+    justify-content: space-around;
+}
 .btn{
     display: block;
     color:#fff;
-    padding: 10px 20px;
+    padding: 5px 10px;
     letter-spacing: 0.1rem;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 4px;
     transition: 0.3s;
     &:hover{
