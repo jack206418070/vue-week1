@@ -1,3 +1,9 @@
+@mixin mobile {
+    @media (max-width: 996px) {
+        @content
+    }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -59,6 +65,9 @@ img{
 .card{
     width: 50%;
     padding: 0 20px;
+    @include mobile{
+        width: 100% !important;
+    }
     &__title{
         font-size: 24px;
         text-align: center;
@@ -188,6 +197,10 @@ img{
     align-self: baseline;
     color: #fff;
     box-shadow: 3px 3px 2px gray;
+    @include mobile{
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
     &__title{
         background-color: #1A535C;
     }
@@ -301,6 +314,9 @@ img{
     transform: translateX(-50%);
     transition: 0.3s;
     z-index: -1;
+    @include mobile{
+        width: 70% !important;
+    }
     &.hide{
         opacity: 0;
         z-index: -1;
