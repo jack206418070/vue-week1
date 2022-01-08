@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>產品新增範例 first-week</title>
+    <link rel="stylesheet" href="all.css" class="css">
+</head>
+<body>
+    <div id="app">
+        <div class="addProduct" :class="{'hide':is_add === false, 'show': is_add === true}">
+            <h2>新增產品</h2>
+            <form action="#">
+                <div class="form-group">
+                    <div class="form-control w-50">
+                        <label for="title">產品名稱</label>
+                        <input v-model.trim="title" id="title" class="w-100" type="text">
+                    </div>
+                    <div class="form-control w-50">
+                        <label for="category">產品分類</label>
+                        <input v-model.trim="category" id="category" class="w-100" type="text">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-control w-50">
+                        <label for="originPrice">原始價格</label>
+                        <input v-model="origin_price" id="originPrice" class="w-100" type="number">
+                    </div>
+                    <div class="form-control w-50">
+                        <label for="price">販售價格</label>
+                        <input v-model="price" id="price" class="w-100" type="number">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-control w-50">
+                        <p class="mb-2">是否啟用</p>
+                        <div class="toggle w-30" @click="changeStatus" :class="{'active': is_enabled}">
+                            <div class="toggle__item" :class="{'active': is_enabled}"></div>
+                        </div>
+                    </div>
+                    <div class="form-control w-50">
+                        <label for="content">產品內容</label>
+                        <input v-model="content" class="w-100" type="text" id="content">
+                    </div>
+                </div>
+                <div class="form-control w-100">
+                    <label for="desc">產品描述</label>
+                    <textarea v-model="description" name="desc" id="desc" cols="30" rows="10" class="w-100"></textarea>
+                </div>
+                <div class="btn-group">
+                    <a @click.prevent="is_add = false" class="btn btn--danger" href="#">取消</a>
+                    <a @click.prevent="addProduct" class="btn btn--success" href="#">新增商品</a>
+                </div>
+            </form>
+        </div>
+        <div class="container d-flex">
+            <div class="total__product w-100 d-flex align-items-center">
+                <p class="me-78">目前有 {{ products.length }} 樣商品</p>
+                <a @click="is_add = true" class="btn btn--success" href="#">建立產品</a>
+            </div>
+            <div class="product w-50">
+                <ul>
+                    <li class="product__title d-flex jy-content-between">
+                        <h3 class="">產品名稱</h3>
+                        <div class="info__group w-90">
+                            <ul class="d-flex fw-bold">
+                                <li>原價</li>
+                                <li>售價</li>
+                                <li>是否啟用</li>
+                                <li>查看細節</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li v-for="(item, index) in products" :key="item.id" class="product__item d-flex jy-content-between" :class="{'bg--lighGreen': index % 2 == 1, 'bg--dark--lighGreen': index % 2 == 0}">
+                        <h3>{{ item.title }}</h3>
+                        <div class="info__group w-90">
+                            <ul class="d-flex fw-bold align-items-center">
+                                <li>${{ item.origin_price }}</li>
+                                <li>${{ item.price }}</li>
+                                <li class="d-flex jy-content-between">
+                                    <div @click="changeStatus(item)" class="toggle" :class="{ 'active': item.is_enabled }">
+                                        <div class="toggle__item" :class="{ 'active': item.is_enabled }">
+                                        </div>
+                                    </div>
+                                    <p :class="{ 'active': item.is_enabled }">{{ item.is_enabled ? '啟用' : '未啟用' }}</p>
+                                </li>
+                                <li>
+                                    <a @click.prevent="viewProduct(item)" href="#" class="btn btn--danger w-80 ml-auto">查看</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div v-if="tempProduct.id" class="card">
+              <div class="card__title">
+                    <h3>單一產品內容</h3>
+                </div>
+                <div class="card__img">
+                    <img class="w-50" :src="tempProduct.imageUrl" alt="tempProduct.title">
+                </div>
+                <div class="card__body">
+                    <div class="card__body__name d-flex">
+                        <h4>{{ tempProduct.title }}</h4>
+                        <div class="tag">{{ tempProduct.category }}</div>
+                    </div>
+                    <div class="card__body__desc">
+                        <div class="content d-flex">
+                            <p class="w-20 text-nowrap">商品描述：</p>
+                            <p>{{ tempProduct.description }}</p>
+                        </div>
+                        <p>商品內容：{{ tempProduct.content }}</p>
+                        <div class="price d-flex">
+                            <p class="origin__price"><span style="text-decoration: line-through; ">原價：${{ tempProduct.origin_price }}元</span></p>
+                            <p class="sale__price"><span>特價：${{ tempProduct.price }}元</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card__footer d-flex">
+                    <img  v-for="image in tempProduct.imagesUrl" :key="image" :src="image" alt="tempProduct.title">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
