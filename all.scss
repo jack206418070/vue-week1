@@ -177,6 +177,9 @@ img{
 .jy-content-around{
     justify-content: space-around;
 }
+.flex-wrap{
+    flex-wrap: wrap;
+}
 .btn{
     display: block;
     color:#fff;
@@ -235,18 +238,34 @@ img{
         font-size: 16px;
         @include mobile{
             font-size: 14px;
+            width: 20%;
+            white-space: nowrap;
         }
     }
     .info__group{
-        @include mobile{
+        @include pad{
             .toggle{
-                width: 60%;
+                width: 30%;
+            }
+        }
+        @include mobile{
+            width: 80%;
+            .toggle{
+                width: 70%;
+            }
+            a{
+                display: block;
+                width: 80% !important;
+                margin-bottom: 5px;
             }
         }
         li{
             width: 25%;
             text-align: center;
             align-self: center;
+            @include mobile{
+                width: 33% !important;
+            }
         }
         p{
             width: 50%;
@@ -414,6 +433,12 @@ img{
 
 .form-group{
     display: flex;
+}
+
+.d-sm-none{
+    @include mobile{
+        display: none;
+    }
 }
 
 .btn-group{

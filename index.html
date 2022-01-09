@@ -65,7 +65,7 @@
                         <h3 class="">產品名稱</h3>
                         <div class="info__group w-90">
                             <ul class="d-flex fw-bold">
-                                <li class="w-15">原價</li>
+                                <li class="w-15 d-sm-none">原價</li>
                                 <li class="w-15">售價</li>
                                 <li class="w-30">是否啟用</li>
                                 <li class="w-40">查看/刪除</li>
@@ -76,7 +76,7 @@
                         <h3>{{ item.title }}</h3>
                         <div class="info__group w-90">
                             <ul class="d-flex fw-bold align-items-center">
-                                <li class="w-15">${{ item.origin_price }}</li>
+                                <li class="w-15 d-sm-none">${{ item.origin_price }}</li>
                                 <li class="w-15">${{ item.price }}</li>
                                 <li class="d-flex jy-content-between jy-content-sm-center w-30 px-4">
                                     <div @click="changeStatus(item)" class="toggle" :class="{ 'active': item.is_enabled }">
@@ -85,7 +85,7 @@
                                     </div>
                                     <p :class="{ 'active': item.is_enabled }">{{ item.is_enabled ? '啟用' : '未啟用' }}</p>
                                 </li>
-                                <li class="w-40 d-flex jy-content-around">
+                                <li class="w-40 d-flex jy-content-around flex-wrap">
                                     <a @click.prevent="viewProduct(item)" href="#" class="btn btn--success w-40">查看</a>
                                     <a @click.prevent="deleteProduct(item.id)" class="btn btn--danger w-40" href="#">刪除</a>
                                 </li>
