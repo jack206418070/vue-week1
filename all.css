@@ -507,6 +507,12 @@ img {
   }
 }
 
+@media (max-width: 415px) {
+  .addProduct {
+    width: 90% !important;
+  }
+}
+
 .addProduct.hide {
   opacity: 0;
   z-index: -1;

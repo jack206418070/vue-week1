@@ -363,7 +363,6 @@ img{
             margin-right: 0;
         }
     }
-    
 }
 .w-90{
     width: 80%;
@@ -382,6 +381,9 @@ img{
     border: 1px solid lightgray;
     @include pad{
         width: 70% !important;
+    }
+    @media (max-width: 415px) {
+        width: 90% !important;
     }
     &.hide{
         opacity: 0;

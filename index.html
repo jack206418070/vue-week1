@@ -57,7 +57,7 @@
         <div class="container d-flex">
             <div class="total__product w-100 d-flex align-items-center">
                 <p class="me-78">目前有 {{ products.length }} 樣商品</p>
-                <a @click="is_add = true" class="btn btn--success" href="#">建立產品</a>
+                <a @click.prevent="is_add = true" class="btn btn--success" href="#">建立產品</a>
             </div>
             <div class="product w-50">
                 <ul>
