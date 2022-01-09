@@ -104,6 +104,7 @@ createApp({
         deleteProduct(id){
             let index = this.products.findIndex(product => product.id == id);
             this.products.splice(index, 1);
+            this.tempProduct.id == id ? this.tempProduct = {} : this.tempProduct;
         }
     }
 }).mount('#app');
