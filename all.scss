@@ -1,8 +1,15 @@
 @mixin mobile {
-    @media (max-width: 996px) {
+    @media (max-width: 768px) {
         @content
     }
 }
+
+@mixin pad{
+    @media (max-width: 1180px) {
+        @content
+    }
+}
+
 
 *{
     margin: 0;
@@ -61,12 +68,22 @@ img{
     margin: 0 auto;
     padding: 30px 80px;
     flex-wrap: wrap;
+    @include pad{
+        padding: 30px;
+    }
+    @include mobile{
+        padding: 20px 10px;
+    }
 }
 .card{
     width: 50%;
     padding: 0 20px;
-    @include mobile{
+    @include pad{
         width: 100% !important;
+    }
+    @include mobile{
+        padding-left: 0;
+        padding-right: 0;
     }
     &__title{
         font-size: 24px;
@@ -197,7 +214,7 @@ img{
     align-self: baseline;
     color: #fff;
     box-shadow: 3px 3px 2px gray;
-    @include mobile{
+    @include pad{
         width: 100% !important;
         margin-bottom: 20px;
     }
@@ -216,8 +233,16 @@ img{
     }
     .info__group, h3{
         font-size: 16px;
+        @include mobile{
+            font-size: 14px;
+        }
     }
     .info__group{
+        @include mobile{
+            .toggle{
+                width: 60%;
+            }
+        }
         li{
             width: 25%;
             text-align: center;
@@ -229,6 +254,9 @@ img{
             align-self: center;
             &.active{
                 color:#1A535C;
+            }
+            @include mobile{
+                display:none;
             }
         }
     }
@@ -254,6 +282,11 @@ img{
 }
 .align-items-center{
     align-items: center;
+}
+.jy-content-sm-center{
+    @include mobile{
+        justify-content: center;
+    }
 }
 .w-80{
     width: 80%;
@@ -298,6 +331,14 @@ img{
     font-size: 24px;
     font-weight: 700;
     color:#000;
+    @include pad{
+        justify-content: space-between;
+    }
+    p{
+        @include pad{
+            margin-right: 0;
+        }
+    }
     
 }
 .w-90{
@@ -314,7 +355,8 @@ img{
     transform: translateX(-50%);
     transition: 0.3s;
     z-index: -1;
-    @include mobile{
+    border: 1px solid lightgray;
+    @include pad{
         width: 70% !important;
     }
     &.hide{
@@ -352,6 +394,12 @@ img{
 
 .form-control{
     padding: 10px 30px;
+    @include mobile{
+        padding: 5px 15px;
+        .toggle{
+            width: 40% !important;
+        }
+    }
     input{
         width: 100%;
     }
@@ -372,4 +420,7 @@ img{
     display: flex;
     justify-content:space-between;
     padding: 10px 30px;
+    @include mobile{
+        padding: 5px 15px;
+    }
 }

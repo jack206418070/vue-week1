@@ -77,14 +77,33 @@ img {
       flex-wrap: wrap;
 }
 
+@media (max-width: 1180px) {
+  .container {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 10px;
+  }
+}
+
 .card {
   width: 50%;
   padding: 0 20px;
 }
 
-@media (max-width: 996px) {
+@media (max-width: 1180px) {
   .card {
     width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -256,7 +275,7 @@ img {
           box-shadow: 3px 3px 2px gray;
 }
 
-@media (max-width: 996px) {
+@media (max-width: 1180px) {
   .product {
     width: 100% !important;
     margin-bottom: 20px;
@@ -285,6 +304,18 @@ img {
   font-size: 16px;
 }
 
+@media (max-width: 768px) {
+  .product .info__group, .product h3 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product .info__group .toggle {
+    width: 60%;
+  }
+}
+
 .product .info__group li {
   width: 25%;
   text-align: center;
@@ -303,6 +334,12 @@ img {
 
 .product .info__group p.active {
   color: #1A535C;
+}
+
+@media (max-width: 768px) {
+  .product .info__group p {
+    display: none;
+  }
 }
 
 .product__item {
@@ -336,6 +373,14 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 768px) {
+  .jy-content-sm-center {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .w-80 {
@@ -390,6 +435,20 @@ img {
   color: #000;
 }
 
+@media (max-width: 1180px) {
+  .total__product {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media (max-width: 1180px) {
+  .total__product p {
+    margin-right: 0;
+  }
+}
+
 .w-90 {
   width: 80%;
 }
@@ -406,9 +465,10 @@ img {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   z-index: -1;
+  border: 1px solid lightgray;
 }
 
-@media (max-width: 996px) {
+@media (max-width: 1180px) {
   .addProduct {
     width: 70% !important;
   }
@@ -457,6 +517,15 @@ img {
   padding: 10px 30px;
 }
 
+@media (max-width: 768px) {
+  .form-control {
+    padding: 5px 15px;
+  }
+  .form-control .toggle {
+    width: 40% !important;
+  }
+}
+
 .form-control input {
   width: 100%;
 }
@@ -483,5 +552,11 @@ img {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 10px 30px;
+}
+
+@media (max-width: 768px) {
+  .btn-group {
+    padding: 5px 15px;
+  }
 }
 /*# sourceMappingURL=all.css.map */
