@@ -337,6 +337,12 @@ img {
   }
 }
 
+@media (max-width: 415px) {
+  .product .info__group .toggle {
+    width: 100%;
+  }
+}
+
 .product .info__group li {
   width: 25%;
   text-align: center;

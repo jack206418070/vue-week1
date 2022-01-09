@@ -259,6 +259,11 @@ img{
                 margin-bottom: 5px;
             }
         }
+        @media (max-width: 415px) {
+            .toggle{
+                width: 100%;
+            }
+        }
         li{
             width: 25%;
             text-align: center;
