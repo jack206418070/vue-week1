@@ -184,8 +184,15 @@ img {
   padding: 0 40px;
 }
 
+@media (max-width: 768px) {
+  .card__body__desc {
+    padding: 0;
+  }
+}
+
 .card__body__desc p {
   margin-bottom: 10px;
+  padding-left: 5px;
 }
 
 .price {
