@@ -35,7 +35,7 @@
                 <div class="form-group">
                     <div class="form-control w-50">
                         <p class="mb-2">是否啟用</p>
-                        <div class="toggle w-30" @click="changeStatus(null)" :class="{'active': is_enabled}">
+                        <div class="toggle" @click="changeStatus(null)" :class="{'active': is_enabled}">
                             <div class="toggle__item" :class="{'active': is_enabled}"></div>
                         </div>
                     </div>
@@ -120,6 +120,11 @@
                 </div>
                 <div class="card__footer d-flex">
                     <img  v-for="image in tempProduct.imagesUrl" :key="image" :src="image" alt="tempProduct.title">
+                </div>
+            </div>
+            <div v-else class="card">
+                <div class="card__title">
+                    <h3>請選擇一樣產品查看</h3>
                 </div>
             </div>
         </div>

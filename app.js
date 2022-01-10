@@ -82,6 +82,16 @@ createApp({
 
             }
             this.products.push(temp);
+            this.clearProductData();
+
+            
+        },
+        deleteProduct(id){
+            let index = this.products.findIndex(product => product.id == id);
+            this.products.splice(index, 1);
+            this.tempProduct.id == id ? this.tempProduct = {} : this.tempProduct;
+        },
+        clearProductData(){
             this.is_add = false;
             this.category = '';
             this.content = '';
@@ -98,13 +108,6 @@ createApp({
                 "https://y3.yooho.com.tw/images/202111/goods_img/8034_G_1637633031624.jpg",
                 "https://y3.yooho.com.tw/images/202112/goods_img/8113_G_1640645888820.jpg"
             ]
-
-            
-        },
-        deleteProduct(id){
-            let index = this.products.findIndex(product => product.id == id);
-            this.products.splice(index, 1);
-            this.tempProduct.id == id ? this.tempProduct = {} : this.tempProduct;
         }
     }
 }).mount('#app');

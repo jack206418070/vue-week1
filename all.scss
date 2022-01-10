@@ -247,25 +247,12 @@ img{
         }
     }
     .info__group{
-        @include pad{
-            .toggle{
-                width: 30%;
-            }
-        }
         @include mobile{
             width: 80%;
-            .toggle{
-                width: 70%;
-            }
             a{
                 display: block;
                 width: 80% !important;
                 margin-bottom: 5px;
-            }
-        }
-        @media (max-width: 415px) {
-            .toggle{
-                width: 100%;
             }
         }
         li{
@@ -326,7 +313,7 @@ img{
     margin-bottom: 8px;
 }
 .toggle{
-    width: 50%;
+    width: 60px;
     background: lightgray;
     border-radius: 20px;
     // outline: 3px solid gray;
@@ -339,9 +326,9 @@ img{
     }
     &__item{
         position: absolute;
-        width: 24px;
-        height: 24px;
-        left: 5%;
+        width: 20px;
+        height: 20px;
+        left: 3%;
         top: 0;
         bottom: 0;
         margin: auto;
@@ -349,7 +336,7 @@ img{
         border-radius: 50%;
         transition: 0.5s;
         &.active{
-            left: 57%;
+            left: 63%;
         }
     }
 }
