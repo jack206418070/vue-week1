@@ -530,7 +530,7 @@ img {
   display: block;
 }
 
-.addProduct form input {
+.addProduct form input, .addProduct form select {
   display: block;
   padding: 10px 5px;
   outline: none;
@@ -540,7 +540,7 @@ img {
   transition: 0.1s;
 }
 
-.addProduct form input:focus {
+.addProduct form input:focus, .addProduct form select:focus {
   outline: 3px solid gray;
 }
 
@@ -557,7 +557,7 @@ img {
   }
 }
 
-.form-control input {
+.form-control input, .form-control select {
   width: 100%;
 }
 

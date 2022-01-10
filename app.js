@@ -14,6 +14,7 @@ createApp({
             title: '',
             unut: '包',
             num: 20,
+            categoryArr: ['海鮮','蔬果','肉品'],
             imageUrl: 'https://sweetvegetable.com.tw/wp-content/uploads/2021/08/%E6%9D%BE%E9%98%AA%E8%B1%AC%E8%82%89%E7%89%87-300x300.jpg',
             imagesUrl: [
                 "https://y3.yooho.com.tw/images/202111/goods_img/8034_G_1637633031624.jpg",

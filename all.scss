@@ -395,7 +395,7 @@ img{
             margin-bottom: 5px;
             display: block;
         }
-        input{
+        input, select{
             display: block;
             padding: 10px 5px;
             outline: none;
@@ -417,7 +417,7 @@ img{
             width: 40% !important;
         }
     }
-    input{
+    input, select{
         width: 100%;
     }
     textarea{
