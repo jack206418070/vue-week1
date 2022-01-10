@@ -531,7 +531,7 @@ img {
 }
 
 .addProduct form select {
-  -webkit-appearance: none;
+  -webkit-appearance: none !important;
 }
 
 .addProduct form input, .addProduct form select {
