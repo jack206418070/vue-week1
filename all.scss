@@ -161,7 +161,6 @@ img{
         color: white;
     }
     .sale__price{
-        background: #FF6B6B;
         color: white;
     }
     p{
@@ -466,3 +465,14 @@ img{
         padding: 5px 15px;
     }
 }
+
+.bg{
+    &--white{
+        background-color: #fff;
+    }
+    &--success{
+        background: #1A535C;
+    }
+}
+
+

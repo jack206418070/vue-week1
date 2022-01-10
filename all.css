@@ -207,7 +207,6 @@ img {
 }
 
 .price .sale__price {
-  background: #FF6B6B;
   color: white;
 }
 
@@ -616,5 +615,13 @@ img {
   .btn-group {
     padding: 5px 15px;
   }
+}
+
+.bg--white {
+  background-color: #fff;
+}
+
+.bg--success {
+  background: #1A535C;
 }
 /*# sourceMappingURL=all.css.map */

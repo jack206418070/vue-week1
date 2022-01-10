@@ -51,6 +51,15 @@
                     <label for="desc">產品描述</label>
                     <textarea v-model="description" name="desc" id="desc" cols="30" rows="10"></textarea>
                 </div>
+                <div class="form-control w-100">
+                    <!--暫時不綁 model -->
+                    <label for="image">產品圖片</label>
+                    <input type="file" class="bg--white" id="image">
+                </div>
+                <div class="form-control w-100">
+                    <label for="imgaeTemp">產品圖片(URL)</label>
+                    <input v-model="imageUrl" type="text" class="bg-white" id="imgaeTemp">
+                </div>
                 <div class="btn-group">
                     <a @click.prevent="is_add = false" class="btn btn--danger" href="#">取消</a>
                     <a @click.prevent="addProduct" class="btn btn--success" href="#">新增商品</a>
@@ -117,7 +126,7 @@
                         <p>商品內容:{{ tempProduct.content }}</p>
                         <div class="price d-flex">
                             <p class="origin__price"><span style="text-decoration: line-through; ">原價：${{ tempProduct.origin_price }}元</span></p>
-                            <p class="sale__price"><span>特價：${{ tempProduct.price }}元</span></p>
+                            <p class="sale__price bg--success"><span>特價：${{ tempProduct.price }}元</span></p>
                         </div>
                     </div>
                 </div>
