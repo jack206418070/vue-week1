@@ -248,6 +248,7 @@ img {
   border-radius: 4px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  text-align: center;
 }
 
 .btn:hover {
@@ -390,6 +391,10 @@ img {
   width: 20%;
 }
 
+.w-25 {
+  width: 25%;
+}
+
 .bg--lighGreen {
   background-color: #F7FFF7;
 }
@@ -466,11 +471,23 @@ img {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .total__product a {
+    width: 20% !important;
+  }
 }
 
 @media (max-width: 1180px) {
   .total__product p {
     margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .total__product a {
+    width: 30% !important;
+  }
+  .total__product p {
+    width: 70% !important;
   }
 }
 

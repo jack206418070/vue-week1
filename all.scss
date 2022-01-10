@@ -192,6 +192,7 @@ img{
     font-size: 16px;
     border-radius: 4px;
     transition: 0.3s;
+    text-align: center;
     &:hover{
         color: black;
     }
@@ -292,6 +293,9 @@ img{
 .w-20{
     width: 20%;
 }
+.w-25{
+    width: 25%;
+}
 .bg--lighGreen{
     background-color: #F7FFF7;
 }
@@ -348,10 +352,21 @@ img{
     color:#000;
     @include pad{
         justify-content: space-between;
+        a{
+            width: 20% !important;
+        }
     }
     p{
         @include pad{
             margin-right: 0;
+        }
+    }
+    @include mobile{
+        a{
+            width: 30% !important;
+        }
+        p{
+            width: 70% !important;
         }
     }
 }
