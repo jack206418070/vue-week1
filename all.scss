@@ -395,6 +395,9 @@ img{
             margin-bottom: 5px;
             display: block;
         }
+        select{
+            -webkit-appearance:none;
+        }
         input, select{
             display: block;
             padding: 10px 5px;
@@ -406,6 +409,7 @@ img{
                 outline: 3px solid gray;
             }
         }
+        
     }
 }
 

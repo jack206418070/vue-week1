@@ -530,6 +530,10 @@ img {
   display: block;
 }
 
+.addProduct form select {
+  -webkit-appearance: none;
+}
+
 .addProduct form input, .addProduct form select {
   display: block;
   padding: 10px 5px;
