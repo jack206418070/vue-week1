@@ -63,9 +63,6 @@ createApp({
         changeStatus(item) {
             item != null ? item.is_enabled = !item.is_enabled : this.is_enabled = !this.is_enabled;
         },
-        viewProduct(item) {
-            this.tempProduct = { ...item };
-        },
         addProduct() {
             let temp = {
                 category: this.category,

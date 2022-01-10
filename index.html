@@ -89,7 +89,7 @@
                                     <p :class="{ 'active': item.is_enabled }">{{ item.is_enabled ? '啟用' : '未啟用' }}</p>
                                 </li>
                                 <li class="w-40 d-flex jy-content-around flex-wrap">
-                                    <a @click.prevent="viewProduct(item)" href="#" class="btn btn--success w-40">查看</a>
+                                    <a @click.prevent="tempProduct = item" href="#" class="btn btn--success w-40">查看</a>
                                     <a @click.prevent="deleteProduct(item.id)" class="btn btn--danger w-40" href="#">刪除</a>
                                 </li>
                             </ul>
