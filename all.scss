@@ -466,6 +466,7 @@ img{
     }
     input, select{
         width: 100%;
+        font-size: initial;
     }
     textarea{
         padding: 10px;
@@ -473,6 +474,7 @@ img{
         outline: none;
         border: 1px solid gray;
         width: 100%;
+        font-size: initial;
     }
 }
 

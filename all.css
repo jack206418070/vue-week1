@@ -1059,6 +1059,7 @@ img {
 
 .form-control input, .form-control select {
   width: 100%;
+  font-size: initial;
 }
 
 .form-control textarea {
@@ -1067,6 +1068,7 @@ img {
   outline: none;
   border: 1px solid gray;
   width: 100%;
+  font-size: initial;
 }
 
 .btn-group {
