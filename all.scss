@@ -353,8 +353,12 @@ img{
     &.active{
         background: #1A535C;
     }
-    &__item{
+    &.active::before{
+        left: 63%;
+    }
+    &::before{
         position: absolute;
+        content: '';
         width: 20px;
         height: 20px;
         left: 3%;
@@ -364,9 +368,6 @@ img{
         background: #fff;
         border-radius: 50%;
         transition: 0.5s;
-        &.active{
-            left: 63%;
-        }
     }
 }
 

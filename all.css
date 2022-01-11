@@ -915,8 +915,13 @@ img {
   background: #1A535C;
 }
 
-.toggle__item {
+.toggle.active::before {
+  left: 63%;
+}
+
+.toggle::before {
   position: absolute;
+  content: '';
   width: 20px;
   height: 20px;
   left: 3%;
@@ -927,10 +932,6 @@ img {
   border-radius: 50%;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-}
-
-.toggle__item.active {
-  left: 63%;
 }
 
 .total__product {
