@@ -916,7 +916,7 @@ img {
 }
 
 .toggle.active::before {
-  left: 63%;
+  left: calc(63% - 4px);
 }
 
 .toggle::before {
@@ -924,7 +924,7 @@ img {
   content: '';
   width: 20px;
   height: 20px;
-  left: 3%;
+  left: calc(3% + 4px);
   top: 0;
   bottom: 0;
   margin: auto;
