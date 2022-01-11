@@ -23,40 +23,43 @@ $max: 10;
 
 @for $i from 1 through $max {
     .p-#{$i} {
-        padding: $i * 4 px;
+        padding: $i * 4px;
     }
     .px-#{$i} {
-        padding-left: $i * 4 px;
-        padding-right: $i * 4 px;
+        padding-left: $i * 4px;
+        padding-right: $i * 4px;
     }
     .py-#{$i} {
-        padding-top: $i * 4 px;
-        padding-bottom: $i * 4 px;
+        padding-top: $i * 4px;
+        padding-bottom: $i * 4px;
     }
     .ps-#{$i} {
-        padding-left: $i * 4 px;
+        padding-left: $i * 4px;
     }
     .pe-#{$i} {
-        padding-right: $i * 4 px;
+        padding-right: $i * 4px;
     }
 }
 @for $i from 1 through $max {
     .m-#{$i} {
-        margin: $i * 4 px;
+        margin: $i * 4px;
     }
     .mx-#{$i} {
-        margin-left: $i * 4 px;
-        margin-right: $i * 4 px;
+        margin-left: $i * 4px;
+        margin-right: $i * 4px;
     }
     .my-#{$i} {
-        margin-top: $i * 4 px;
-        margin-bottom: $i * 4 px;
+        margin-top: $i * 4px;
+        margin-bottom: $i * 4px;
     }
     .ms-#{$i} {
-        margin-left: $i * 4 px;
+        margin-left: $i * 4px;
     }
     .me-#{$i} {
-        margin-right: $i * 4 px;
+        margin-right: $i * 4px;
+    }
+    .mb-#{$i} {
+        margin-bottom: $i * 4px;
     }
 }
 
@@ -99,8 +102,8 @@ $max: 10;
 .align-items-center{
     align-items: center;
 }
-.border-b{
-    border-bottom: 2px solid #000;
+.border-top{
+    border-top: 1px solid gray;
 }
 .fw-bold{
     font-weight: bold;
@@ -425,7 +428,12 @@ img{
         padding: 10px 0;
     }
     form{
+        height: 600px;
         background: #F7FFF7;
+        overflow-y: scroll;
+        @include mobile{
+            height: 500px;
+        }
         label{
             margin-bottom: 5px;
             display: block;

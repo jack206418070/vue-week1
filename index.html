@@ -60,11 +60,11 @@
                     <label for="imgaeTemp">產品圖片(URL)</label>
                     <input v-model="imageUrl" type="text" class="bg-white" id="imgaeTemp">
                 </div>
-                <div class="btn-group">
-                    <a @click.prevent="is_add = false" class="btn btn--danger" href="#">取消</a>
-                    <a @click.prevent="addProduct" class="btn btn--success" href="#">新增商品</a>
-                </div>
             </form>
+            <div class="btn-group bg--dark--secondary">
+                <a @click.prevent="is_add = false" class="btn btn--danger" href="#">取消</a>
+                <a @click.prevent="addProduct" class="btn btn--success" href="#">新增商品</a>
+            </div>
         </div>
         <div class="container d-flex">
             <div class="total__product w-100 d-flex align-items-center">
