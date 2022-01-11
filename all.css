@@ -653,6 +653,7 @@ img {
 }
 
 .card__footer img {
+  width: 33%;
   padding-right: 5px;
   cursor: pointer;
   -webkit-transition: 0.3s;
