@@ -1,3 +1,8 @@
+$primary:#1A535C;
+$danger: #FF6B6B;
+$secondary:#F7FFF7;
+$max: 10;
+
 @mixin mobile {
     @media (max-width: 768px) {
         @content
@@ -7,6 +12,110 @@
 @mixin pad{
     @media (max-width: 1180px) {
         @content
+    }
+}
+
+@for $i from 1 through $max {
+  .w-#{$i*10} {
+    width: $i * 10%;
+  }
+}
+
+@for $i from 1 through $max {
+    .p-#{$i} {
+        padding: $i * 4 px;
+    }
+    .px-#{$i} {
+        padding-left: $i * 4 px;
+        padding-right: $i * 4 px;
+    }
+    .py-#{$i} {
+        padding-top: $i * 4 px;
+        padding-bottom: $i * 4 px;
+    }
+    .ps-#{$i} {
+        padding-left: $i * 4 px;
+    }
+    .pe-#{$i} {
+        padding-right: $i * 4 px;
+    }
+}
+@for $i from 1 through $max {
+    .m-#{$i} {
+        margin: $i * 4 px;
+    }
+    .mx-#{$i} {
+        margin-left: $i * 4 px;
+        margin-right: $i * 4 px;
+    }
+    .my-#{$i} {
+        margin-top: $i * 4 px;
+        margin-bottom: $i * 4 px;
+    }
+    .ms-#{$i} {
+        margin-left: $i * 4 px;
+    }
+    .me-#{$i} {
+        margin-right: $i * 4 px;
+    }
+}
+
+.bg{
+    &--white{
+        background-color: #fff;
+    }
+    &--primary{
+        background: $primary;
+    }
+    &--dark--secondary{
+        background-color: darken($secondary, 5%);
+    }
+    &--secondary{
+        background-color: $secondary;
+    }
+}
+
+.w-15{
+    width: 15%;
+}
+.ml-auto{
+    margin-left: auto;
+}
+.d-flex{
+    display: flex;
+}
+.align-self-end{
+    align-self:flex-end;
+}
+.jy-content-between{
+    justify-content: space-between;
+}
+.jy-content-around{
+    justify-content: space-around;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+.align-items-center{
+    align-items: center;
+}
+.border-b{
+    border-bottom: 2px solid #000;
+}
+.fw-bold{
+    font-weight: bold;
+}
+.text-nowrap{
+    white-space: nowrap;
+}
+.jy-content-sm-center{
+    @include mobile{
+        justify-content: center;
+    }
+}
+.d-sm-none{
+    @include mobile{
+        display: none;
     }
 }
 
@@ -27,41 +136,6 @@ img{
     max-height: 100%;
     vertical-align: middle;
     object-fit: cover;
-}
-.px-5{
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.align-self-end{
-    align-self:flex-end;
-}
-.px-4{
-    padding-right: 16px;
-    padding-left: 16px;
-}
-.w-10{
-    width: 10% !important;
-}
-.w-15{
-    width: 15% !important;
-}
-.w-35{
-    width: 30% !important;
-}
-.w-40{
-    width: 40% !important;
-}
-.pl-5{
-    padding-left: 20px;
-}
-.w-50{
-    width: 50%;
-}
-.w-100{
-    width: 100%;
-}
-.d-flex{
-    display: flex;
 }
 .container {
     max-width: 1400px;
@@ -168,21 +242,6 @@ img{
     }
 }
 
-.ml-auto{
-    margin-left: auto;
-}
-.w-30{
-    width: 30% !important;
-}
-.jy-content-between{
-    justify-content: space-between;
-}
-.jy-content-around{
-    justify-content: space-around;
-}
-.flex-wrap{
-    flex-wrap: wrap;
-}
 .btn{
     display: block;
     color:#fff;
@@ -208,13 +267,7 @@ img{
         }
     }
 }
-.border-b{
-    border-bottom: 2px solid #000;
-}
 
-.fw-bold{
-    font-weight: bold;
-}
 
 .product{
     letter-spacing:0.1rem;
@@ -256,7 +309,6 @@ img{
             }
         }
         li{
-            width: 25%;
             text-align: center;
             align-self: center;
             @include mobile{
@@ -283,38 +335,8 @@ img{
         }
     }
 }
-.bg--dark--lighGreen{
-    background-color: darken(#F7FFF7, 5%);
-}
-.text-nowrap{
-    white-space: nowrap;
-}
-.w-20{
-    width: 20%;
-}
-.w-25{
-    width: 25%;
-}
-.bg--lighGreen{
-    background-color: #F7FFF7;
-}
-.align-items-center{
-    align-items: center;
-}
-.jy-content-sm-center{
-    @include mobile{
-        justify-content: center;
-    }
-}
-.w-80{
-    width: 80%;
-}
-.me-78{
-    margin-right: 312px;
-}
-.mb-2{
-    margin-bottom: 8px;
-}
+
+
 .toggle{
     width: 60px;
     background: lightgray;
@@ -369,9 +391,7 @@ img{
         }
     }
 }
-.w-90{
-    width: 80%;
-}
+
 
 .addProduct{
     position: absolute;
@@ -447,15 +467,6 @@ img{
     }
 }
 
-.form-group{
-    display: flex;
-}
-
-.d-sm-none{
-    @include mobile{
-        display: none;
-    }
-}
 
 .btn-group{
     display: flex;
@@ -466,13 +477,7 @@ img{
     }
 }
 
-.bg{
-    &--white{
-        background-color: #fff;
-    }
-    &--success{
-        background: #1A535C;
-    }
+.form-group{
+    display: flex;
 }
-
 

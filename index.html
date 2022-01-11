@@ -75,7 +75,7 @@
                 <ul>
                     <li class="product__title d-flex jy-content-between">
                         <h3 class="">產品名稱</h3>
-                        <div class="info__group w-90">
+                        <div class="info__group w-80">
                             <ul class="d-flex fw-bold">
                                 <li class="w-15 d-sm-none">原價</li>
                                 <li class="w-15">售價</li>
@@ -84,9 +84,9 @@
                             </ul>
                         </div>
                     </li>
-                    <li v-for="(item, index) in products" :key="item.id" class="product__item d-flex jy-content-between" :class="{'bg--lighGreen': index % 2 == 1, 'bg--dark--lighGreen': index % 2 == 0}">
+                    <li v-for="(item, index) in products" :key="item.id" class="product__item d-flex jy-content-between" :class="{'bg--secondary': index % 2 == 1, 'bg--dark--secondary': index % 2 == 0}">
                         <h3>{{ item.title }}</h3>
-                        <div class="info__group w-90">
+                        <div class="info__group w-80">
                             <ul class="d-flex fw-bold align-items-center">
                                 <li class="w-15 d-sm-none">${{ item.origin_price }}</li>
                                 <li class="w-15">${{ item.price }}</li>
@@ -126,7 +126,7 @@
                         <p>商品內容:{{ tempProduct.content }}</p>
                         <div class="price d-flex">
                             <p class="origin__price"><span style="text-decoration: line-through; ">原價：${{ tempProduct.origin_price }}元</span></p>
-                            <p class="sale__price bg--success"><span>特價：${{ tempProduct.price }}元</span></p>
+                            <p class="sale__price bg--primary"><span>特價：${{ tempProduct.price }}元</span></p>
                         </div>
                     </div>
                 </div>
