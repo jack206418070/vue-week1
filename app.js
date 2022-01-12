@@ -3,23 +3,25 @@ import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.9/vue.
 createApp({
     data() {
         return {
-            is_add: false,
-            category: '',
-            content: '',
-            description: '',
-            id: '',
-            is_enabled: false,
-            origin_price: 0,
-            price: 0,
-            title: '',
-            unut: '包',
-            num: 20,
             categoryArr: ['海鮮','蔬果','肉品'],
-            imageUrl: '',
-            imagesUrl: [
-                "https://y3.yooho.com.tw/images/202111/goods_img/8034_G_1637633031624.jpg",
-                "https://y3.yooho.com.tw/images/202112/goods_img/8113_G_1640645888820.jpg"
-            ],
+            is_add: false,
+            addProduct:{
+                category: '',
+                content: '',
+                description: '',
+                id: '',
+                is_enabled: false,
+                origin_price: 0,
+                price: 0,
+                title: '',
+                unut: '包',
+                num: 20,
+                imageUrl: '',
+                imagesUrl: [
+                    "https://y3.yooho.com.tw/images/202111/goods_img/8034_G_1637633031624.jpg",
+                    "https://y3.yooho.com.tw/images/202112/goods_img/8113_G_1640645888820.jpg"
+                ]
+            },
             products: [
                 {
                     category: "生鮮類別",
@@ -60,24 +62,26 @@ createApp({
         }
     },
     methods: {
-        addProduct() {
-            let temp = {
-                category: this.category,
-                content: this.content,
-                description: this.description,
-                id: new Date().getDate(),
-                is_enabled: this.is_enabled,
-                origin_price: this.origin_price,
-                price: this.price,
-                title: this.title,
-                unit: this.unit,
-                num: this.num,
-                imageUrl: this.imageUrl,
-                imagesUrl: this.imagesUrl
-
+        addProductHandler() {
+            this.products.push(this.addProduct);
+            this.is_add = false;
+            this.addProduct = {
+                category: '',
+                content: '',
+                description: '',
+                id: '',
+                is_enabled: false,
+                origin_price: 0,
+                price: 0,
+                title: '',
+                unut: '包',
+                num: 20,
+                imageUrl: '',
+                imagesUrl: [
+                    "https://y3.yooho.com.tw/images/202111/goods_img/8034_G_1637633031624.jpg",
+                    "https://y3.yooho.com.tw/images/202112/goods_img/8113_G_1640645888820.jpg"
+                ]
             }
-            this.products.push(temp);
-            this.clearProductData();
 
             
         },
@@ -86,23 +90,5 @@ createApp({
             this.products.splice(index, 1);
             this.tempProduct.id == id ? this.tempProduct = {} : this.tempProduct;
         },
-        clearProductData(){
-            this.is_add = false;
-            this.category = '';
-            this.content = '';
-            this.description = '';
-            this.id = '';
-            this.is_enabled = false;
-            this.origin_price = 0;
-            this.price = 0;
-            this.title = '';
-            this.unut = '包';
-            this.num = 20;
-            this.imageUrl = '';
-            this.imagesUrl = [
-                "https://y3.yooho.com.tw/images/202111/goods_img/8034_G_1637633031624.jpg",
-                "https://y3.yooho.com.tw/images/202112/goods_img/8113_G_1640645888820.jpg"
-            ]
-        }
     }
 }).mount('#app');
