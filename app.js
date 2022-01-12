@@ -64,7 +64,14 @@ createApp({
     methods: {
         addProductHandler() {
             this.products.push(this.addProduct);
-            this.is_add = false;
+            this.clearProduct();
+        },
+        deleteProduct(id){
+            let index = this.products.findIndex(product => product.id == id);
+            this.products.splice(index, 1);
+            this.tempProduct.id == id ? this.tempProduct = {} : this.tempProduct;
+        },
+        clearProduct(){
             this.addProduct = {
                 category: '',
                 content: '',
@@ -82,13 +89,7 @@ createApp({
                     "https://y3.yooho.com.tw/images/202112/goods_img/8113_G_1640645888820.jpg"
                 ]
             }
-
-            
-        },
-        deleteProduct(id){
-            let index = this.products.findIndex(product => product.id == id);
-            this.products.splice(index, 1);
-            this.tempProduct.id == id ? this.tempProduct = {} : this.tempProduct;
-        },
+            this.is_add = false;
+        }
     }
 }).mount('#app');
