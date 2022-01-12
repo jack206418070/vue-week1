@@ -63,6 +63,7 @@ createApp({
     },
     methods: {
         addProductHandler() {
+            this.addProduct.id = new Date().getTime();
             this.products.push(this.addProduct);
             this.clearProduct();
         },
